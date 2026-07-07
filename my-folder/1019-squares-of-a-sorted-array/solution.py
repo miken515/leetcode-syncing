@@ -4,19 +4,9 @@ class Solution(object):
         :type nums: List[int]
         :rtype: List[int]
         """
-        
-        left = 0
-        right = len(nums) - 1
-        result = []
 
-        while left <= right:
-            if abs(nums[left]) > abs(nums[right]):
-                result.append(nums[left] ** 2)
-                left += 1
-            else:
-                result.append(nums[right] ** 2)
-                right -= 1
+        for i in range(len(nums)):
+            nums[i] *= nums[i]
 
-        result.reverse()
 
-        return result
+        return sorted(nums)
