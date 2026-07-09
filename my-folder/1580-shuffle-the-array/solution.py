@@ -1,7 +1,15 @@
-class Solution:
-    def shuffle(self, nums: List[int], n: int) -> List[int]:
-        result = [0] * (2 * n)
+class Solution(object):
+    def shuffle(self, nums, n):
+        """
+        :type nums: List[int]
+        :type n: int
+        :rtype: List[int]
+        """
+        left = nums[:n]
+        right = nums[n:]
+        res = []
         for i in range(n):
-            result[2 * i] = nums[i]
-            result[2 * i + 1] = nums[n + i]
-        return result
+            res.append(left[i])
+            res.append(right[i])
+
+        return res
